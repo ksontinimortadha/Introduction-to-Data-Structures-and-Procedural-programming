@@ -1,0 +1,50 @@
+//procedure to determine if the vectors are orthogonal or not
+PROCEDURE dot_product(var n:INTEGER ,v1,v2 : ARRAY_OF INTEGER)
+VAR
+    i,j:INTEGER;
+    ps: INTEGER:=0;
+BEGIN
+    // calculating ps
+    FOR i FROM 1 TO n STEP 1  DO
+        FOR j FROM 1 TO n STEP step  DO
+            ps:=ps + (v1[i]*v2[j]);
+        END_FOR
+    END_FOR
+    
+    //verifiying if the vectors are orthogonal
+    IF (ps = 0) THEN
+        Write("The two vectors are orthogonal");
+    ELSE
+        Write("The two vectors aren't orthogonal");
+    END_IF
+END
+
+
+ALGORITHM cal_dotproduct
+VAR
+    v1 : ARRAY_OF INTEGER[5]; //the 1st vector
+    v2: ARRAY_OF INTEGER[5]; //the 2nd vector
+    n:INTEGER; //size of the vectors
+    i:INTEGER; //counter
+BEGIN
+    // entering the size of the vector
+    REPEAT
+        Write("N = ");
+        read(n);
+    UNTIL (n > 0);
+
+    //filling the 1st vector
+    FOR i FROM 1 TO n STEP 1  DO
+        Write("v1[",i,"]=");
+        read(v1[i])
+    END_FOR
+
+    //filling the 2nd vector
+    FOR i FROM 1 TO n STEP 1  DO
+        Write("v2[",i,"]=");
+        read(v2[i])
+    END_FOR
+
+    //using the procedure 
+    dot_product(v1,v2);
+END    

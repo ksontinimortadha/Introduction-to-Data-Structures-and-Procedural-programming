@@ -1,0 +1,26 @@
+ALGORITHM sum_ele
+VAR
+    sum,sum1,sum2 : INTEGER:=0; //variables for sum
+    set1 : ARRAY_OF INTEGER:= {3,1,7,9}; //1st set
+    set2 : ARRAY_OF INTEGER:= {2,4,1,9,3}; //2nd set
+    i:INTEGER; //counter
+BEGIN
+    //calculating the sum of distinct elements of the 1st set
+    WHILE (i < length.set1) DO
+        IF (set1[i] <> set2[i]) THEN
+            sum1:= sum1 + set1[i];
+        END_IF
+    END_WHILE
+
+    //calculating the sum of distinct elements of the 2nd set
+    WHILE (i < length.set2) DO
+        IF (set2[i] <> set1[i]) THEN
+            sum2:= sum2 + set2[i];
+        END_IF
+    END_WHILE
+
+    //calculating the sum of distinct elements 
+    sum:= sum1 + sum2 ;
+
+    Write("sum of elements = ",sum);
+END
