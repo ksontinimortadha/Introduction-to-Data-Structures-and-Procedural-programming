@@ -10,7 +10,10 @@ Problem 2-v1: calculates the variable ps(scalar product) of 2 vectors using a pr
 - "dot_product" is the procedure
 - "v1" is the first vector
 - "v2" is the second vector
+- "ps" is the variable for the scalar product
 - "i" is the counter
+- "n" is the size of the vectors
+
 
 Problem 2-v2: calculates in the variable ps(scalar product) of 2 vectors using a function
 - "dot_product" is the function
